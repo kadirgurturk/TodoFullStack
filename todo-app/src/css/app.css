@@ -1,0 +1,270 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+.TodoInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.TodoInput h2 {
+  margin-bottom: 18px;
+}
+.TodoInput .Input {
+  border: 1px solid rgb(189, 189, 189);
+  padding: 20px 25px;
+}
+.TodoInput .Input .taskInput {
+  padding-left: 10px;
+  height: 35px;
+  width: 480px;
+  border: 1px solid rgb(189, 189, 189);
+  margin-bottom: 20px;
+}
+.TodoInput .Input .taskInput:focus {
+  outline-color: rgb(42, 131, 255);
+}
+.TodoInput .Input .addTask {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 35px;
+  padding-left: 5px;
+  color: white;
+  background-color: rgb(42, 131, 255);
+  width: 480px;
+}
+.TodoInput .Input .addTask:hover {
+  background-color: white;
+  color: rgb(42, 131, 255);
+  border: 1px solid rgb(42, 131, 255);
+}
+
+.todoBtns {
+  width: 530px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.todoBtns h2 {
+  margin-bottom: 18px;
+}
+.todoBtns .todoBtns_btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.todoBtns .todoBtns_btns .listbtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 35px;
+  padding-left: 5px;
+  color: white;
+  background-color: rgb(42, 131, 255);
+  width: 160px;
+}
+.todoBtns .todoBtns_btns .listbtn:hover {
+  background-color: white;
+  color: rgb(42, 131, 255);
+  border: 1px solid rgb(42, 131, 255);
+}
+.todoBtns .todoBtns_btns .activebtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 35px;
+  padding-left: 5px;
+  color: white;
+  background-color: rgb(105, 168, 255);
+  width: 160px;
+}
+.todoBtns .todoBtns_btns .activebtn:hover {
+  background-color: white;
+  color: rgb(105, 168, 255);
+  border: 1px solid rgb(105, 168, 255);
+}
+
+.todoList {
+  width: 530px;
+  display: flex;
+  flex-direction: column;
+}
+.todoList .list {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.todoList .list .todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+}
+.todoList .list .todo .ıtem_done {
+  color: red;
+  text-decoration: line-through;
+}
+.todoList .list .todo .todo_act {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 18%;
+}
+.todoList .list .todo .todo_act img {
+  width: 28px;
+  height: 20px;
+}
+.todoList .list .todo .todo_act img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+.todoList .list .todo .todo_act #check {
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 4px;
+}
+.todoList .list .todo .todo_act #check:hover {
+  border: 1px solid rgb(145, 223, 225);
+  cursor: pointer;
+}
+.todoList .list .todo .todo_act #check:checked::after {
+  content: "✓";
+  font-size: 18px;
+  color: rgb(30, 255, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.todoList .todoList_btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.todoList .todoList_btns .deleteBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 35px;
+  padding-left: 5px;
+  color: white;
+  background-color: #D4403A;
+  width: 250px;
+}
+.todoList .todoList_btns .deleteBtn:hover {
+  background-color: white;
+  color: #D4403A;
+  border: 1px solid #D4403A;
+}
+
+.updatepopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.updatepopup .update_container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 250px;
+  width: 530px;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(233, 242, 255);
+}
+.updatepopup .update_container #close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  opacity: 0.7;
+}
+.updatepopup .update_container #close:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.updatepopup .update_container .form_input {
+  border: 1px solid rgb(189, 189, 189);
+  padding: 20px 25px;
+  padding-left: 10px;
+  height: 25px;
+  width: 100%;
+  border: 1px solid rgb(189, 189, 189);
+  margin-bottom: 20px;
+}
+.updatepopup .update_container .form_input:focus {
+  outline-color: rgb(42, 131, 255);
+}
+.updatepopup .update_container button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 35px;
+  padding-left: 5px;
+  color: white;
+  background-color: rgb(42, 131, 255);
+  width: 480px;
+}
+.updatepopup .update_container button:hover {
+  background-color: white;
+  color: rgb(42, 131, 255);
+  border: 1px solid rgb(42, 131, 255);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.app {
+  background-color: white;
+  padding: 10px;
+}/*# sourceMappingURL=app.css.map */

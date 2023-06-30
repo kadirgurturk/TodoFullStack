@@ -1,0 +1,28 @@
+@use "../mixin" as m;
+@use "../variable" as v;
+
+.todoBtns{
+
+    width: 530px;
+    @include m.column_center;
+    margin-bottom: 25px;
+
+    h2{
+        margin-bottom: 18px;
+    }
+    
+    .todoBtns_btns{
+        width: 100%;
+        @include m.flex_row;
+        justify-content: space-between;
+        align-items: center;
+        .listbtn{
+            @include m.button(v.$primary-blue, v.$lit-width,)
+        }
+        .activebtn{
+            @include m.button(rgb(105, 168, 255), v.$lit-width,)
+        }
+
+    }
+
+}

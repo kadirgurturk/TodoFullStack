@@ -1,0 +1,25 @@
+@use "./mixin" as m;
+@use "./variable" as v;
+@use "./component/todoInput";
+@use "./component/todoBtns";
+@use "./component/todoList";
+@use "./component/updatePopup";
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: v.$primary-font;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+
+.app {
+    background-color: white;
+    padding: 10px;
+}

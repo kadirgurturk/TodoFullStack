@@ -1,0 +1,54 @@
+@use "../mixin" as m;
+@use "../variable" as v;
+
+.updatepopup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    @include m.row_center;
+    z-index: 99;
+    .update_container{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        height: 250px;
+        width: 530px;;
+        border-radius: 15px;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(233, 242, 255);
+
+        #close{
+            position: absolute;
+            top:25px;
+            right: 25px;
+            opacity: 0.7;
+            &:hover{
+                cursor: pointer;
+                opacity: 1;
+            }
+        }
+
+        .form_input{
+            border: 1px solid rgb(189, 189, 189);
+            padding: 20px 25px;
+                padding-left: 10px;
+                height: 25px;
+                width: 100%;
+                border: 1px solid rgb(189, 189, 189);
+        
+                &:focus{
+                    outline-color: rgb(42, 131, 255);
+                }
+                margin-bottom: 20px;
+            }
+        
+        
+            button{
+                @include m.button(v.$primary-blue, v.$big-width,)
+            }
+        }
+    }

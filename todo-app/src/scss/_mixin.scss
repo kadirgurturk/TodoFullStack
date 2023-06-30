@@ -1,0 +1,45 @@
+@import "_variable";
+
+
+@mixin flex_row{
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex_column{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin column_center{
+    @include flex_column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin row_center{
+    @include flex_column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin base_button{
+    @include row_center;
+    border-radius: 5px;
+    height: 35px;
+    padding-left: 5px;
+    color: white;
+}
+
+@mixin button($color, $width,){
+    @include base_button;
+    background-color: $color;
+    width: $width;
+    &:hover{
+        background-color: white;
+        color: $color;
+        border: 1px solid $color;
+    }
+    
+
+}

@@ -1,0 +1,36 @@
+@use "../mixin" as m;
+@use "../variable" as v;
+
+.TodoInput{
+
+    @include m.column_center;
+    margin-bottom: 25px;
+
+    h2{
+        margin-bottom: 18px;
+    }
+
+    .Input{
+        border: 1px solid rgb(189, 189, 189);
+        padding: 20px 25px;
+    
+        .taskInput{
+            padding-left: 10px;
+            height: 35px;
+            width: 480px;
+            border: 1px solid rgb(189, 189, 189);
+    
+            &:focus{
+                outline-color: rgb(42, 131, 255);
+            }
+            margin-bottom: 20px;
+        }
+    
+    
+        .addTask{
+            @include m.button(v.$primary-blue, v.$big-width,)
+        }
+    }
+
+
+}

@@ -60,7 +60,7 @@ public class TodoService implements ITodoService<TodoDto, Todo>{
     public List<TodoDto> todoList() {
         Iterable<Todo> todoList = todoRepository.findAll();
         List<TodoDto> todoDtolist = new ArrayList<>();
-        for (Todo entity : todoList) {
+        for (Todo entity : todoList) {      //------> Repodan gelen entityleri DTO haline getirip listeyi dönüyoruz.
             TodoDto todoDto = EntityToDto(entity);
             todoDtolist.add(todoDto);
         }
@@ -92,6 +92,8 @@ public class TodoService implements ITodoService<TodoDto, Todo>{
             throw new BadRequestException(id + "Girilen Id geçersiz");
         }
 
+        //  ---> Önce id değerinin geçerli olup olamadığına baktık sonra, bu id değerinde Entity olup olmadığına baktık
+
     }
     @Transactional
     @Override
@@ -104,6 +106,7 @@ public class TodoService implements ITodoService<TodoDto, Todo>{
             todo.setStatus(todoDto.getStatus());
             todoRepository.save(todo);
 
+            // ------------> Update işlemi gerçekleşir.
         }
         return EntityToDto(todo);
     }
@@ -129,6 +132,8 @@ public class TodoService implements ITodoService<TodoDto, Todo>{
             return (StreamSupport.stream(todoRepository.findByStatus(Status.valueOf(status)).spliterator(),false))
                     .map(this::EntityToDto)
                     .collect(Collectors.toList());
+
+            // ---------------> DONE veya TODO için sorting yapmadan önce, gelen değerin geçerli olup olmadığına emin olduk.
         }
 
         throw new BadRequestException("Status DONE veya TODO girilmeli");

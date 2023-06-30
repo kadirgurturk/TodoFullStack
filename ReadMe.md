@@ -2,7 +2,7 @@
 
 #### Bu proje bir Yapılacaklar Listesini tutabileceğiniz backend ve frontend kısımlarıdan oluşan bir FullStack Projedir. Proje'nin amacı kişini günlük hayatında yapması gereken iş ve görevleri rahatça not edip, takip edebilmesini sağlamaktadır.
 
-- Projede bizim girdiğimiz yapılacak maddleri listeler halinde sıralar.Sıralama maddlerin kayıda girilme sırasına göredir.
+- Projede bizim girdiğimiz yapılacak maddeleri listeler halinde sıralar.Sıralama maddelerin kayıda girilme sırasına göredir.
 - Listede bulunan her bir madde "Yapılacak" ve "Yapıldı" olarak iki farklı durum alır.
 - "Yapıldı" durumunda olanların üstü kırmızı çizgi ile çizili durumda'dır.
 - Liste'de bulunan maddelerin içerik ve durumlarını değiştirmek mümkün.
@@ -19,13 +19,13 @@
 
 <img src="ReadmeImg\update.png" width="255px" >
 
-- Liste'de bulunan madde'nin yanındaki çöp kutusu imgesinw tıklarasnız maddeyi silersiniz.
+- Liste'de bulunan madde'nin yanındaki çöp kutusu imgesine tıklarasnız maddeyi silersiniz.
 
 - Listenin altında bulnan butonlar ise toplu silme butonlarıdır. "Delete All Tasks" ile tüm listeyi, "Delete Done Tasks" butonu ise "Yapıldı" statüsünde bulunan tüm maddleri siler.
 
-- Listeini yukarısında bulunan "All","Todo","Done" butonları ise listelencek maddlere karar verir.
+- Listeini yukarısında bulunan "All","Todo","Done" butonları ise listelencek maddelere karar verir.
 
-- Default olan liste "All" listesi'dir, Tüm maddleri gösterir.
+- Default olan liste "All" listesi'dir, Tüm maddeleri gösterir.
 
 - "Todo" butonu "Yapılacak" durumunda olan maddeleri gösterir.
 
@@ -40,8 +40,8 @@
 ## Kullanılan Teknolojiler ve Bağımlılıklar
 
 #### Frontend kısmında:
-- Proje React.js kullanılar hazırlanmıştır.
-- Backend kısmı ile bağlantı için axios kullanılmıştır.
+- Proje React.js kullanılarak hazırlanmıştır.
+- Rest Api ile bağlantı için axios kullanılmıştır.
 - Styling için scss kullanılmıştır.
 - Store yapısı için redux-toolkit tercih edilmiştir.
 
@@ -56,7 +56,7 @@
  - web-vitals: "^2.1.4"
 
 #### Backend kısmında:
-- Proje bakend kısmında Spring boot ve türevleri ile hazırlanmıştır.
+- Proje backend kısmında Spring boot ve türevleri ile hazırlanmıştır.
 - Web kısmının entegrasyonu için Spring-Web'den yararlanılmıştır.
 - Validation işlemleri için spring-boot-starter-validation kullanılmıştır.
 - Mapper dönüşümleri için ModalMapper'dan yararlanılmıştır.
@@ -82,7 +82,7 @@
 
 ### Ön Gereksinimler:
 1. JDK: JDK yüklü olamalı, değil ise JDK'nın en son sürümünü [indirin](https://www.oracle.com/java/technologies/downloads/#java11) ve kurun.
-2. Node.js : Node.js yüklü olmalı değil ise en son sürümüm [indirin](https://nodejs.org) ve bilgisayarınıza kurun.
+2. Node.js : Node.js yüklü olmalı değil ise en son sürümünü [indirin](https://nodejs.org) ve bilgisayarınıza kurun.
 3. PostgreSql  : PostgreSQL yüklü değilse, aşağıdaki adımları izleyerek PostgreSQL'in en son sürümünü [indirin](https://www.postgresql.org/download) ve kurun.
 4. GitBash:  Projeyi clone'lama ve çalıştırma işlemleri için gerekli.
 
@@ -129,7 +129,7 @@ git clone https://github.com/kadirgurturk/TodoFullStack.git
          src/
             assets/ ---------> Projede kullanılan svg ve image'lar bulunur.
             component/ ------> Projedeki component yapıları bulunur.
-                    - TodoBtns.jsx  -------> Hangi Maddelerin listeleneceği seçilen butoonlar bulunur
+                    - TodoBtns.jsx  -------> Hangi Maddelerin listeleneceği seçilen butonlar bulunur
                     - TodoInput.jsx -------> Yeni madde ekleyen input burada bulunur.
                     - TodoList.jsx --------> Maddeler burada listelenir.
                     - UpdatePopup.jsx -----> Madde'nin içeriğini değiştiren input popup'ı burada bulunur. 
@@ -160,10 +160,10 @@ git clone https://github.com/kadirgurturk/TodoFullStack.git
                                     configuration/ -----> Gerekli konfigürasyonlar burada yapılır.
                                     controller/
                                         api/ ----------> Web service kısmı burada bulnur.
-                                    data/
-                                        entity/
-                                        enums/
-                                        repository/
+                                    data/    ---------> Veritabanı işlemleri
+                                        entity/ -----> Entity burada bulnur.
+                                        enums/  -----> Enum yapısı
+                                        repository/ -> Jpa Repo burada bulnur
                                     error/ -----------> Eror sınıfları bulnur.
                                     excepiton/ -------> Excepiton sınıfları burada bulnur.
                                     util/ ------------> Ek işlemler ve değişkenler burda tutulur.

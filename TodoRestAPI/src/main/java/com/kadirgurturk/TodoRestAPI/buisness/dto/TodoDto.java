@@ -26,7 +26,7 @@ import java.util.Date;
 public class TodoDto implements Serializable {
     public static final Long serialVersionUID = 1L;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonInclude(JsonInclude.Include.NON_NULL) // ---------> Bu anatasyonu save işlemi için yaptık, save işleminde karşıdan id almayız. id değeri otomatik artan değerdedir
     private String id;
 
     @NotEmpty(message = "Name boş olamaz")

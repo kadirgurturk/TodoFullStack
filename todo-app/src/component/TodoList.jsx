@@ -23,7 +23,7 @@ export default function TodoList() {
     });
   },[])
 
-  useEffect(()=>{
+  useEffect(()=>{  //-------------> Store'dan gelen text değerine göre listeyi ayarlarız.
     if(text === "All"){
         TodoApiService.todoSort("id").then(
             (response)=>{
@@ -39,7 +39,7 @@ export default function TodoList() {
                 setTodos(response.data)
             }
         ).catch((err)=>{
-            console.error("List Failed Whwn Trying to Get TODO" + err)
+            console.error("List Failed When Trying to Get TODO" + err)
         });
     }
     if(text === "Done"){
@@ -48,13 +48,13 @@ export default function TodoList() {
                 setTodos(response.data)
             }
         ).catch((err)=>{
-            console.error("List Failed Whwn Trying to Get DONE" + err)
+            console.error("List Failed When Trying to Get DONE" + err)
         });
     }
   },)
 
   
-    const changeStatus = (todo) =>{
+    const changeStatus = (todo) =>{  // -----------> checkbox değerine göre task'in yapılıp yapılmadığını ayarlarız.
         let id = todo.id;
         todo.status = todo.status === "DONE" ? "TODO" : "DONE"
 

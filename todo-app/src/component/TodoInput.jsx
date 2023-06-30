@@ -22,7 +22,7 @@ export default function TodoInput() {
     }else{
       TodoApiService.todoSave(newTodo);
       setTask("");
-    }
+    } //---> Değerin boş olması durumunu handler ediyoruz.
 
 
   };

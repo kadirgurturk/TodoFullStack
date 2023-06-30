@@ -85,37 +85,98 @@
 2. Node.js : Node.js yüklü olmalı değil ise en son sürümüm [indirin](https://nodejs.org) ve bilgisayarınıza kurun.
 3. PostgreSql  : PostgreSQL yüklü değilse, aşağıdaki adımları izleyerek PostgreSQL'in en son sürümünü [indirin](https://www.postgresql.org/download) ve kurun.
 4. GitBash:  Projeyi clone'lama ve çalıştırma işlemleri için gerekli.
-5. 
+
 #### Ön gereksinimleri tamamladıktan sonra kurulum için projeyi github sayfasıdan clone'lamalıyız.
 ```
-git clone https://github.com/kullanici/proje.git
+git clone https://github.com/kadirgurturk/TodoFullStack.git
 ```
 
 #### Önce backend kurulur.
 - Proje backend bölümüne gidilir
 ```
-    cd backend/
+    cd TodoRestAPI/
 ```
 - Gerekli kurulumlar yapılır:
 ```
     mvn clean install
-    
 ```
-
 - Uygulama run edilir ve service http://localhost:2222 ayağa kalkar.
-- 
+```
+    mvn spring-boot:run
+```
 #### Sonra Frontend.
+
 - Proje frontend bölümüne gidilir
 ```
-    cd frontend/
+    cd todo-app/
 ```
 - Gerekli kurulumlar yapılır:
 ```
    npm install
-    
 ```
 - Proje run edilir ve http://localhost:3000'de site ayağa kalkar.
 ```
     npm run start
+```
+
+## Proje Dizin Yapısı
+
+```
+    ReadmeImg/ -----> ReadMe dosyası içindeki görseller tutulur.
+    todo-app/  -----> Frontend dosyaları burada bulunur.
+         public/
+            - index.Html -----> root html.
+         src/
+            assets/ ---------> Projede kullanılan svg ve image'lar bulunur.
+            component/ ------> Projedeki component yapıları bulunur.
+                    - TodoBtns.jsx  -------> Hangi Maddelerin listeleneceği seçilen butoonlar bulunur
+                    - TodoInput.jsx -------> Yeni madde ekleyen input burada bulunur.
+                    - TodoList.jsx --------> Maddeler burada listelenir.
+                    - UpdatePopup.jsx -----> Madde'nin içeriğini değiştiren input popup'ı burada bulunur. 
+            css/ ------------> Scss konfigürasyonu sonunda oluşan css dosyası burda bulunur
+            reducer/ -------> redux-createSlice yapıları bu dosyada bulunur.
+                    - listReducer ---------> Hangi liste'nin yayınlanacağını store'da aktarır.
+            scss/ ----------> scss dosyaları burada bulunur, herbir component için ayrı scss dosya bulunur.
+            service/ -------> Api isteklerini kolaylaştırmak için service sınıfı bulunur.
+            store/ ---------> Global store bulunur.  
+            - App.js -------> Tüm componenetler burada toparlanır.
+            - İndex.js -----> Kök html'e bağlantı buradan yapılır.       
+         - .gitignore
+         - package.json
+         - package-lock.json   
+    TodoRestAPI/ ---> Rest Service burada bulunur.
+         - .idea -------> IDEA yapılandırma dosyaları bulunur.
+         - .mvn --------> Maven yapılandırma dosyları.
+         src/
+            main/
+                java/ ---------->
+                    com/
+                        kadirgurturk/
+                            TodoRestAPI/
+                                    bean/ ----> Proje çalıştığında lazım olan yapılar burada otomarik şekilde yazılır.
+                                    buisness/
+                                        dto/     -------> Dto yapılıarı bulunur.
+                                        service/   -----> Service yapıları bulunur.
+                                    configuration/ -----> Gerekli konfigürasyonlar burada yapılır.
+                                    controller/
+                                        api/ ----------> Web service kısmı burada bulnur.
+                                    data/
+                                        entity/
+                                        enums/
+                                        repository/
+                                    error/ -----------> Eror sınıfları bulnur.
+                                    excepiton/ -------> Excepiton sınıfları burada bulnur.
+                                    util/ ------------> Ek işlemler ve değişkenler burda tutulur.
+                                    - TodoRestApiApplicaiton.java
+                resources/ ----->
+                    static
+                    templates
+                    application.properties -------> Proje içi ayarlamalr burda yapılır.
+            test/ -----> Test İşlemleri bulunur.
+         - .gitignore
+         - DockerFile --> Docker işlemleri burada bulunur
+         - mvnw --------> Maven Wrapper
+         - pom.xml------> Pom yapılandırmaları bulunur 
+    -ReadMe.md -----> ReadMe dosyası
 ```
 
